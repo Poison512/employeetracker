@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  },
+  "name": "employeetracker",
+  "description": "module",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poison512/employeetracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Poison512/employeetracker/issues"
+  },
+  "homepage": "https://github.com/Poison512/employeetracker#readme"
+}
