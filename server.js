@@ -1,22 +1,28 @@
 const inquirer = require('inquirer');
 const cTable = require('console.table');
 const mysql = require('mysql2');
+const connection = require('./db/connection');
+const express = require('express')
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-const connection = mysql.createConnection(
-    {
-        host: 'localhost',
-        port: 3000,
-        user: 'root',
-        password: '@Alonzo512',
-        database: 'buisness'
-    }
-)
-connection.connect(function(err) {
-    if(err) {
-        return console.error('error: ' + err.message);
-    }
-    console.log("Conneceted successfully to mysql server")
-});
+
+
+// const connection = mysql.createConnection(
+//     {
+//         host: 'localhost',
+//         port: 3000,
+//         user: 'root',
+//         password: '@Alonzo512',
+//         database: 'buisness'
+//     }
+// )
+// connection.connect(function(err) {
+//     if(err) {
+//         return console.error('error: ' + err.message);
+//     }
+//     console.log("Conneceted successfully to mysql server")
+// });
 
 const userPrompt = () => {
     return inquirer
@@ -277,5 +283,14 @@ addRole = () => {
     exitConnection = () => {
         connection.end()
     }
+
+connection.connect(err => {
+  if (err) throw err;
+  console.log('Database connected.');
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+});
+
 
  userPrompt()
