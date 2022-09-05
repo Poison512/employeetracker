@@ -1,28 +1,28 @@
 USE buisness;
 
 INSERT INTO department (
-    department_name
+   id, name 
 )
 VALUES
-('CEO'),
-('LEAD'),
-('STAFF'),
-('HR')
+(1,'CEO'),
+(2,'LEAD'),
+(3,'STAFF'),
+(4,'HR')
 
-INSERT INTO role 
-(title, salary, department_id)
+INSERT INTO roles 
+(id, title, salary, department_id)
 VALUES
-('CEO', '1000000.00', 1),
-('LEAD', '500000.00', 2),
-('STAFF', '400000.00', 3),
-('HR', '300000.00', 4)
+(1,'CEO', '1000000.00', 1),
+(2,'LEAD', '500000.00', 2),
+(3,'STAFF', '400000.00', 3),
+(4,'HR', '300000.00', 4)
 
 INSERT INTO employee(
-    first_name, last_name, role_id, manager_id
+ id, first_name, last_name, role_id, manager_id
 )
 VALUES
-('Gucci', 'Mane', 1, NULL),
-('Zro', 2, 1),
-('Dj', 'Screw', 3,2),
-('Project', 'Pat' 4, NULL),
-('Juicy', 'J', 5,1);
+(1,'Gucci', 'Mane', 1, 1),
+(2,'Zro', 2, 1),
+(3,'Dj', 'Screw', 3,2),
+(4,'Project', 'Pat' 4, 3),
+(5,'Juicy', 'J', 5,1);
